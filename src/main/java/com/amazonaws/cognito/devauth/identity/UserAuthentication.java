@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample.identity;
+package main.java.com.amazonaws.cognito.devauth.identity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,9 +21,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import main.java.com.amazonaws.cognito.devauthsample.Configuration;
-import main.java.com.amazonaws.cognito.devauthsample.Utilities;
-import main.java.com.amazonaws.cognito.devauthsample.exception.DataAccessException;
+import main.java.com.amazonaws.cognito.devauth.Configuration;
+import main.java.com.amazonaws.cognito.devauth.Utilities;
+import main.java.com.amazonaws.cognito.devauth.exception.DataAccessException;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.regions.RegionUtils;

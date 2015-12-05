@@ -13,8 +13,8 @@
  * permissions and limitations under the License.
 -->
 
-<%@page import="main.java.com.amazonaws.cognito.devauthsample.Utilities"%>
-<%@page import="main.java.com.amazonaws.cognito.devauthsample.Configuration"%>
+<%@page import="main.java.com.amazonaws.cognito.devauth.Utilities"%>
+<%@page import="main.java.com.amazonaws.cognito.devauth.Configuration"%>
 <%@ page session="true" %>
 
 <script type="text/javascript">
@@ -40,7 +40,7 @@
 
 <html>
 	<head>
-		<title>Amazon Cognito Developer Authentication Sample - Register</title>
+		<title>Amazon Cognito Developer Authentication - Register</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/jsp/css/styles.css" type="text/css" media="screen" charset="utf-8">
@@ -50,7 +50,7 @@
 	<body class="register">
 
 		<div id="header">
-			<h1>Amazon Cognito Developer Authentication Sample</h1>
+			<h1>Amazon Cognito Developer Authentication</h1>
 		</div>
 
 		<div id="body">
@@ -109,7 +109,7 @@
 		%>
 		
 		<div id="footer">
-			<p class="footnote"><%=Configuration.APP_NAME %> - Cognito Developer Authentication Sample</p>
+			<p class="footnote"><%=Configuration.APP_NAME %> - Cognito Developer Authentication</p>
 		</div>
 
 	</body>

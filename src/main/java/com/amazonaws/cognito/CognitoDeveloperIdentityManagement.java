@@ -19,24 +19,24 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import main.java.com.amazonaws.cognito.devauthsample.Configuration;
-import main.java.com.amazonaws.cognito.devauthsample.AWSCognitoDeveloperAuthenticationSampleLogger;
+import main.java.com.amazonaws.cognito.devauth.Configuration;
+import main.java.com.amazonaws.cognito.devauth.AWSCognitoDeveloperAuthenticationLogger;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.cognitoidentity.AmazonCognitoIdentityClient;
 import com.amazonaws.services.cognitoidentity.model.GetOpenIdTokenForDeveloperIdentityRequest;
 import com.amazonaws.services.cognitoidentity.model.GetOpenIdTokenForDeveloperIdentityResult;
 
 public class CognitoDeveloperIdentityManagement {
-	protected static final Logger log = AWSCognitoDeveloperAuthenticationSampleLogger.getLogger();
-    
+	protected static final Logger log = AWSCognitoDeveloperAuthenticationLogger.getLogger();
+
 	AmazonCognitoIdentityClient cib;
-	
+
 	public CognitoDeveloperIdentityManagement() {
 		cib = new AmazonCognitoIdentityClient();
 		cib.setRegion(RegionUtils.getRegion(Configuration.REGION));
 	}
-	
-    public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenFromCognito( 
+
+    public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenFromCognito(
             String username, Map<String,String> logins, String identityId) throws Exception{
     	if ( ( Configuration.IDENTITY_POOL_ID == null ) || username == null ) {
 			return null;

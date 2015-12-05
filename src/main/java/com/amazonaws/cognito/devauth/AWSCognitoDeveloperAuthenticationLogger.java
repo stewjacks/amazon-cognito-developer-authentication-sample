@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample;
+package main.java.com.amazonaws.cognito.devauth;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -25,7 +25,7 @@ import java.util.logging.SimpleFormatter;
  * Utility used to enable logging for applications launched in AWS Elastic
  * BeanStalk.
  */
-public class AWSCognitoDeveloperAuthenticationSampleLogger {
+public class AWSCognitoDeveloperAuthenticationLogger {
 
     private static Logger logger;
 
@@ -35,14 +35,14 @@ public class AWSCognitoDeveloperAuthenticationSampleLogger {
     }
 
     /**
-     * Get the logger for AWSCognitoDeveloperAuthenticationSample
+     * Get the logger for AWSCognitoDeveloperAuthentication
      */
     public synchronized static Logger getLogger() {
         if (null != logger) {
             return logger;
         }
 
-        logger = Logger.getLogger("AWSCognitoDeveloperAuthenticationSampleLogger");
+        logger = Logger.getLogger("AWSCognitoDeveloperAuthenticationLogger");
         FileHandler handler;
         try {
             handler = new FileHandler("MyLogFile.txt", true);
@@ -60,7 +60,7 @@ public class AWSCognitoDeveloperAuthenticationSampleLogger {
         return logger;
     }
 
-    private AWSCognitoDeveloperAuthenticationSampleLogger() {
+    private AWSCognitoDeveloperAuthenticationLogger() {
     }
 
 }

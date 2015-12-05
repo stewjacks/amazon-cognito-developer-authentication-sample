@@ -3,7 +3,7 @@
                              http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.amazonaws.cognito</groupId>
-	<artifactId>cognito-dev-auth-sample</artifactId>
+	<artifactId>cognito-dev-auth</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
 	<name>Cognito Developer Identity Management</name>
@@ -32,7 +32,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>CognitoDevAuthSample</finalName>
+		<finalName>CognitoDevAuth</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

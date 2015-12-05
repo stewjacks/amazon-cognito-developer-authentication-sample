@@ -13,18 +13,18 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample;
+package main.java.com.amazonaws.cognito.devauth;
 
 /**
- * This interface exposes key functions performed by AWSCognitoDeveloperAuthenticationSample.
+ * This interface exposes key functions performed by AWSCognitoDeveloperAuthentication.
  * Application developer can track their customer and how much
  * resources each of them is using by registering the users and then
  * generating tokens based on a particular user.
  */
-public interface AWSCognitoDeveloperAuthenticationSample {
+public interface AWSCognitoDeveloperAuthentication {
 
     /**
-     * Allows users to register with AWSCognitoDeveloperAuthenticationSample.
+     * Allows users to register with AWSCognitoDeveloperAuthentication.
      * 
      * @param username
      *            Unique alphanumeric string of length between 3 to 128

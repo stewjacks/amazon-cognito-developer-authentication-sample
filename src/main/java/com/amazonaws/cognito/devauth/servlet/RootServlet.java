@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample.servlet;
+package main.java.com.amazonaws.cognito.devauth.servlet;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -25,29 +25,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.com.amazonaws.cognito.devauthsample.Constants;
-import main.java.com.amazonaws.cognito.devauthsample.AWSCognitoDeveloperAuthenticationSampleLogger;
-import main.java.com.amazonaws.cognito.devauthsample.exception.MissingParameterException;
-import main.java.com.amazonaws.cognito.devauthsample.identity.AWSCognitoDeveloperAuthenticationSample;
+import main.java.com.amazonaws.cognito.devauth.Constants;
+import main.java.com.amazonaws.cognito.devauth.AWSCognitoDeveloperAuthenticationLogger;
+import main.java.com.amazonaws.cognito.devauth.exception.MissingParameterException;
+import main.java.com.amazonaws.cognito.devauth.identity.AWSCognitoDeveloperAuthentication;
 
 /**
- * An abstract class for AWSCognitoDeveloperAuthenticationSample servlets.
+ * An abstract class for AWSCognitoDeveloperAuthentication servlets.
  */
 public abstract class RootServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    protected static final Logger log = AWSCognitoDeveloperAuthenticationSampleLogger.getLogger();
+    protected static final Logger log = AWSCognitoDeveloperAuthenticationLogger.getLogger();
 
     /**
-     * A AWSCognitoDeveloperAuthenticationSample instance.
+     * A AWSCognitoDeveloperAuthentication instance.
      */
-    protected AWSCognitoDeveloperAuthenticationSample authSample;
+    protected AWSCognitoDeveloperAuthentication auth;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        authSample = new AWSCognitoDeveloperAuthenticationSample();
+        auth = new AWSCognitoDeveloperAuthentication();
     }
 
     @Override

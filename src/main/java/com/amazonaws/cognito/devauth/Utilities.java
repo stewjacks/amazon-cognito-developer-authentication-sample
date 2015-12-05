@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample;
+package main.java.com.amazonaws.cognito.devauth;
 
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
@@ -34,7 +34,7 @@ import com.amazonaws.util.HttpUtils;
 
 public class Utilities {
 
-    protected static final Logger log = AWSCognitoDeveloperAuthenticationSampleLogger.getLogger();
+    protected static final Logger log = AWSCognitoDeveloperAuthenticationLogger.getLogger();
     private static SecureRandom RANDOM = new SecureRandom();
     static {
         RANDOM.generateSeed(16);

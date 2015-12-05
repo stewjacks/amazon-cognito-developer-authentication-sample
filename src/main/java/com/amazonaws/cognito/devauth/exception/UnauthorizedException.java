@@ -13,21 +13,20 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample.exception;
+package main.java.com.amazonaws.cognito.devauth.exception;
 
 /**
- * This is the exception thrown when AWSCognitoDeveloperAuthenticationSample fails to retrieve data from AWS
- * service.
+ * This is the exception thrown when one is not authorized to access a resource.
  */
-public class DataAccessException extends Exception {
+public class UnauthorizedException extends Exception {
 
     private static final long serialVersionUID = 1L;
 
-    public DataAccessException(String message) {
+    public UnauthorizedException(String message) {
         super(message);
     }
 
-    public DataAccessException(String message, Throwable cause) {
+    public UnauthorizedException(String message, Throwable cause) {
         super(message, cause);
     }
 }

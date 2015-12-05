@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample.servlet;
+package main.java.com.amazonaws.cognito.devauth.servlet;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -22,9 +22,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.com.amazonaws.cognito.devauthsample.Utilities;
-import main.java.com.amazonaws.cognito.devauthsample.exception.DataAccessException;
-import main.java.com.amazonaws.cognito.devauthsample.exception.MissingParameterException;
+import main.java.com.amazonaws.cognito.devauth.Utilities;
+import main.java.com.amazonaws.cognito.devauth.exception.DataAccessException;
+import main.java.com.amazonaws.cognito.devauth.exception.MissingParameterException;
 
 /**
  * Servlet implementation class UserRegisterServlet
@@ -63,7 +63,7 @@ public class RegisterUserServlet extends RootServlet {
 
         try {
             log.info("Register user: " + username);
-            boolean result = authSample.registerUser(username, password, endpoint);
+            boolean result = auth.registerUser(username, password, endpoint);
             if (!result) {
                 log.warning(String.format("Duplicate registration [%s]", username));
                 response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);

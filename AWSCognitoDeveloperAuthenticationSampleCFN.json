@@ -1,44 +1,44 @@
 {
 	"AWSTemplateFormatVersion": "2010-09-09",
-	"Description": "Sample Developer Authentication application using Amazon Cognito",
-	"Parameters": 
+	"Description": "Developer Authentication application using Amazon Cognito",
+	"Parameters":
 	{
-		"IdentityPoolId": 
+		"IdentityPoolId":
 		{
 			"Type": "String",
 			"Description": "Enter the identity pool id which has developer authenticated identities enabled"
 		},
 
-		"DeveloperProviderName": 
+		"DeveloperProviderName":
 		{
 			"Type": "String",
 			"Description": "Enter the developer provider name for the above identity pool"
 		}
 	},
 
-	"Resources": 
+	"Resources":
 	{
-		"DeveloperAuthenticationSampleRole": 
+		"DeveloperAuthenticationRole":
 		{
 			"Type": "AWS::IAM::Role",
-			"Properties": 
+			"Properties":
 			{
-				"AssumeRolePolicyDocument": 
+				"AssumeRolePolicyDocument":
 				{
 					"Version": "2012-10-17",
-					"Statement": 
+					"Statement":
 					[
 						{
 							"Effect": "Allow",
-							"Principal": 
+							"Principal":
 							{
-								"Service": 
+								"Service":
 								[
 									"ec2.amazonaws.com"
 								]
 							},
 
-							"Action": 
+							"Action":
 							[
 								"sts:AssumeRole"
 							]
@@ -47,17 +47,17 @@
 				},
 
 				"Path": "/",
-				"Policies": 
+				"Policies":
 				[
 					{
-						"PolicyName": "DeveloperAuthenticationSamplePolicy",
-						"PolicyDocument": 
+						"PolicyName": "DeveloperAuthenticationPolicy",
+						"PolicyDocument":
 						{
 							"Version": "2012-10-17",
-							"Statement": 
+							"Statement":
 							[
 								{
-									"Action": 
+									"Action":
 									[
 										"dynamodb:*",
 										"cognito-identity:GetOpenIdTokenForDeveloperIdentity"
@@ -73,47 +73,47 @@
 			}
 		},
 
-		"DeveloperAuthenticationSampleInstanceProfile": 
+		"DeveloperAuthenticationInstanceProfile":
 		{
 			"Type": "AWS::IAM::InstanceProfile",
-			"Properties": 
+			"Properties":
 			{
 				"Path": "/",
-				"Roles": 
+				"Roles":
 				[
 					{
-						"Ref": "DeveloperAuthenticationSampleRole"
+						"Ref": "DeveloperAuthenticationRole"
 					}
 				]
 			}
 		},
 
-		"DeveloperAuthenticationSampleApplication": 
+		"DeveloperAuthenticationApplication":
 		{
 			"Type": "AWS::ElasticBeanstalk::Application",
-			"Properties": 
+			"Properties":
 			{
-				"Description": "Sample developer authentication application for showcasing the developer authenticated feature of Amazon Cognito",
-				"ApplicationVersions": 
+				"Description": "Developer authentication application for showcasing the developer authenticated feature of Amazon Cognito",
+				"ApplicationVersions":
 				[
 					{
 						"VersionLabel": "Version 1.3",
 						"Description": "Release version",
-						"SourceBundle": 
+						"SourceBundle":
 						{
-							"S3Bucket": { "Fn::Join": ["-", [ "amazon-cognito-samples", { "Ref": "AWS::Region" } ] ] },
-							"S3Key": "CognitoDevAuthSample.war"
+							"S3Bucket": { "Fn::Join": ["-", [ "amazon-cognito", { "Ref": "AWS::Region" } ] ] },
+							"S3Key": "CognitoDevAuth.war"
 						}
 					}
 				],
 
-				"ConfigurationTemplates": 
+				"ConfigurationTemplates":
 				[
 					{
 						"TemplateName": "DefaultConfiguration",
 						"Description": "64bit Amazon Linux running Tomcat 7",
 						"SolutionStackName": "64bit Amazon Linux running Tomcat 7",
-						"OptionSettings": 
+						"OptionSettings":
 						[
 							{
 								"Namespace": "aws:elasticbeanstalk:environment",
@@ -136,16 +136,16 @@
 							{
 								"Namespace": "aws:autoscaling:launchconfiguration",
 								"OptionName": "IamInstanceProfile",
-								"Value": 
+								"Value":
 								{
-									"Ref": "DeveloperAuthenticationSampleInstanceProfile"
+									"Ref": "DeveloperAuthenticationInstanceProfile"
 								}
 							},
 
 							{
 								"Namespace": "aws:elasticbeanstalk:application:environment",
 								"OptionName": "PARAM1",
-								"Value": 
+								"Value":
 								{
 									"Ref": "IdentityPoolId"
 								}
@@ -173,38 +173,38 @@
 			}
 		},
 
-		"DeveloperAuthenticationSampleEnvironment": 
+		"DeveloperAuthenticationEnvironment":
 		{
 			"Type": "AWS::ElasticBeanstalk::Environment",
-			"Properties": 
+			"Properties":
 			{
-				"ApplicationName": 
+				"ApplicationName":
 				{
-					"Ref": "DeveloperAuthenticationSampleApplication"
+					"Ref": "DeveloperAuthenticationApplication"
 				},
 
-				"Description": "Developer Authentication Sample Environment",
+				"Description": "Developer Authentication Environment",
 				"TemplateName": "DefaultConfiguration",
 				"VersionLabel": "Version 1.3"
 			}
 		}
 	},
 
-	"Outputs": 
+	"Outputs":
 	{
-		"ApplicationURL": 
+		"ApplicationURL":
 		{
-			"Value": 
+			"Value":
 			{
-				"Fn::Join": 
+				"Fn::Join":
 				[
 					"",
 					[
 						"http://",
 						{
-							"Fn::GetAtt": 
+							"Fn::GetAtt":
 							[
-								"DeveloperAuthenticationSampleEnvironment",
+								"DeveloperAuthenticationEnvironment",
 								"EndpointURL"
 							]
 						}
@@ -212,7 +212,7 @@
 				]
 			},
 
-			"Description": "Application URL for the Developer Authentication Sample Environment"
+			"Description": "Application URL for the Developer Authentication Environment"
 		}
 	}
 }

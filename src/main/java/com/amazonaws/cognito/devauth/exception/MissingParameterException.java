@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample.exception;
+package main.java.com.amazonaws.cognito.devauth.exception;
 
 public class MissingParameterException extends Exception {
 

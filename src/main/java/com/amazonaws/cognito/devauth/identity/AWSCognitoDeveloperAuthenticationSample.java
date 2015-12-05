@@ -13,19 +13,19 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample.identity;
+package main.java.com.amazonaws.cognito.devauth.identity;
 
 import java.util.logging.Logger;
 import java.util.Map;
 
 import main.java.com.amazonaws.cognito.CognitoDeveloperIdentityManagement;
-import main.java.com.amazonaws.cognito.devauthsample.AWSCognitoDeveloperAuthenticationSampleLogger;
-import main.java.com.amazonaws.cognito.devauthsample.Configuration;
-import main.java.com.amazonaws.cognito.devauthsample.Utilities;
-import main.java.com.amazonaws.cognito.devauthsample.exception.DataAccessException;
-import main.java.com.amazonaws.cognito.devauthsample.exception.UnauthorizedException;
-import main.java.com.amazonaws.cognito.devauthsample.identity.DeviceAuthentication.DeviceInfo;
-import main.java.com.amazonaws.cognito.devauthsample.identity.UserAuthentication.UserInfo;
+import main.java.com.amazonaws.cognito.devauth.AWSCognitoDeveloperAuthenticationLogger;
+import main.java.com.amazonaws.cognito.devauth.Configuration;
+import main.java.com.amazonaws.cognito.devauth.Utilities;
+import main.java.com.amazonaws.cognito.devauth.exception.DataAccessException;
+import main.java.com.amazonaws.cognito.devauth.exception.UnauthorizedException;
+import main.java.com.amazonaws.cognito.devauth.identity.DeviceAuthentication.DeviceInfo;
+import main.java.com.amazonaws.cognito.devauth.identity.UserAuthentication.UserInfo;
 import com.amazonaws.services.cognitoidentity.model.GetOpenIdTokenForDeveloperIdentityResult;
 
 /**
@@ -34,15 +34,15 @@ import com.amazonaws.services.cognitoidentity.model.GetOpenIdTokenForDeveloperId
  * This key is used to encrypt tokens in future communication.
  */
 
-public class AWSCognitoDeveloperAuthenticationSample {
+public class AWSCognitoDeveloperAuthentication {
 
-    private static final Logger log = AWSCognitoDeveloperAuthenticationSampleLogger.getLogger();
+    private static final Logger log = AWSCognitoDeveloperAuthenticationLogger.getLogger();
 
     private final DeviceAuthentication deviceAuthenticator;
     private final UserAuthentication userAuthenticator;
     private final CognitoDeveloperIdentityManagement byoiManagement;
 
-    public AWSCognitoDeveloperAuthenticationSample() {
+    public AWSCognitoDeveloperAuthentication() {
         deviceAuthenticator = new DeviceAuthentication();
         userAuthenticator = new UserAuthentication();
         byoiManagement = new CognitoDeveloperIdentityManagement();
@@ -67,7 +67,7 @@ public class AWSCognitoDeveloperAuthenticationSample {
     }
 
     /**
-     * Allows users to register with AWSCognitoDeveloperAuthenticationSample. This function
+     * Allows users to register with AWSCognitoDeveloperAuthentication. This function
      * is useful in Identity mode
      * 
      * @param username

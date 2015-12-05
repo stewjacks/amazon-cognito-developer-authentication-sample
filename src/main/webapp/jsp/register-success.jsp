@@ -14,12 +14,12 @@
 -->
 
 <%@page
-	import="main.java.com.amazonaws.cognito.devauthsample.Configuration"%>
+	import="main.java.com.amazonaws.cognito.devauth.Configuration"%>
 <%@ page session="true"%>
 
 <html>
 <head>
-<title>Amazon Cognito Developer Authentication Sample - Success</title>
+<title>Amazon Cognito Developer Authentication - Success</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
@@ -36,7 +36,7 @@
 <body class="success">
 
 	<div id="header">
-		<h1>Amazon Cognito Developer Authentication Sample</h1>
+		<h1>Amazon Cognito Developer Authentication</h1>
 	</div>
 
 	<div id="body">
@@ -44,23 +44,14 @@
 			<legend>Success!</legend>
 			<p class="message">Congratulations, you have been successfully
 				registered.</p>
-			You can use the registered user name and password in the sample
+			You can use the registered user name and password in the 
 			mobile applications.
-			<ul>
-				<li>Configure the <a
-					href="https://github.com/awslabs/aws-sdk-ios-samples/tree/master/CognitoSync-Sample/Objective-C">Objective
-						C sample</a> or the <a
-					href="https://github.com/awslabs/aws-sdk-android-samples/tree/master/CognitoSyncDemo">Android
-						Sample</a> by following the instructions for developer authenticated
-					identities in the sample's ReadMe file.
-				</li>
-			</ul>
 		</fieldset>
 	</div>
 
 	<div id="footer">
 		<p class="footnote"><%=Configuration.APP_NAME%>
-			- Cognito Developer Authentication Sample
+			- Cognito Developer Authentication
 		</p>
 	</div>
 

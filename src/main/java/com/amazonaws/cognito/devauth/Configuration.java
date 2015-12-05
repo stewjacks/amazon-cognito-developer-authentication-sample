@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample;
+package main.java.com.amazonaws.cognito.devauth;
 
 import java.util.logging.Logger;
 
@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class Configuration {
 
-    protected static final Logger log = AWSCognitoDeveloperAuthenticationSampleLogger
+    protected static final Logger log = AWSCognitoDeveloperAuthenticationLogger
             .getLogger();
 
     /**
@@ -72,15 +72,15 @@ public class Configuration {
 
     private static String getAppName() {
         return System.getProperty("APP_NAME",
-                "AWSCognitoDeveloperAuthenticationSample").toLowerCase();
+                "AWSCognitoDeveloperAuthentication").toLowerCase();
     }
 
     private static String getUsersTable() {
-        return "AWSCognitoDeveloperAuthenticationSample_" + APP_NAME + "_USERS";
+        return "AWSCognitoDeveloperAuthentication_" + APP_NAME + "_USERS";
     }
 
     private static String getDeviceTable() {
-        return "AWSCognitoDeveloperAuthenticationSample_" + APP_NAME
+        return "AWSCognitoDeveloperAuthentication_" + APP_NAME
                 + "_DEVICES";
     }
 

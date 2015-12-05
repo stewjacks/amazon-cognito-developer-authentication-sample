@@ -13,15 +13,15 @@
  * permissions and limitations under the License.
 -->
 
-<%@page import="main.java.com.amazonaws.cognito.devauthsample.Constants"%>
-<%@page import="main.java.com.amazonaws.cognito.devauthsample.Utilities"%>
+<%@page import="main.java.com.amazonaws.cognito.devauth.Constants"%>
+<%@page import="main.java.com.amazonaws.cognito.devauth.Utilities"%>
 <%@page
-	import="main.java.com.amazonaws.cognito.devauthsample.Configuration"%>
+	import="main.java.com.amazonaws.cognito.devauth.Configuration"%>
 <%@ page session="true"%>
 
 <html>
 <head>
-<title>Amazon Cognito Developer Authentication Sample - Welcome</title>
+<title>Amazon Cognito Developer Authentication - Welcome</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
@@ -38,34 +38,20 @@
 
 <body class="success">
 	<div id="header">
-		<h1>Amazon Cognito Developer Authentication Sample</h1>
+		<h1>Amazon Cognito Developer Authentication</h1>
 	</div>
 
 	<div id="body">
 		<fieldset>
 			<legend>Congratulations!</legend>
 			<p class="message">You have successfully configured the Cognito
-				Developer Authentication Sample.</p>
+				Developer Authentication.</p>
 		</fieldset>
 		<fieldset>
 			Next steps
 			<ul>
 				<li><a href="jsp/register.jsp">Register a user</a> to use in
-					the samples.</li>
-				<li>Configure the <a
-					href="https://github.com/awslabs/aws-sdk-android-samples/tree/master/CognitoSyncDemo">Android
-						Sample</a> by following the instructions for developer authenticated
-					identities in the ReadMe file.
-				</li>
-				<li>Configure the <a
-					href="https://github.com/awslabs/aws-sdk-ios-samples/tree/master/CognitoSync-Sample/Objective-C">Objective
-						C sample</a> by following the instructions for developer authenticated
-					identities in the ReadMe file.
-				</li>
-				<li>Refer to the <a
-					href="https://github.com/awslabs/amazon-cognito-developer-authentication-sample">ReadMe</a>
-					for this application for any issues.
-				</li>
+					the app.</li>
 			</ul>
 		</fieldset>
 	</div>
@@ -75,7 +61,7 @@
 	            || Utilities.isEmpty(Configuration.IDENTITY_POOL_ID)) {
 	%>
 	<p class="warning">Warning: Your Cognito Developer Authentication
-		Sample is not properly configured.</p>
+		 is not properly configured.</p>
 	<%
 	    }
 	%>
@@ -93,7 +79,7 @@
 
 	<div id="footer">
 		<p class="footnote"><%=Configuration.APP_NAME%>
-			- AWSCognitoDeveloperAuthenticationSample
+			- AWSCognitoDeveloperAuthentication
 		</p>
 	</div>
 </body>

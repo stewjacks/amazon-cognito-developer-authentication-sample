@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package main.java.com.amazonaws.cognito.devauthsample;
+package main.java.com.amazonaws.cognito.devauth;
 
 import java.security.AlgorithmParameters;
 import java.security.GeneralSecurityException;
